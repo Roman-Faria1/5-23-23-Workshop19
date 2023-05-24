@@ -23,10 +23,14 @@ let listOfTributes = [
 
 // Use one of the array looping methods to solve this puzzle. 
 
-function tributeSelection (arr) {
-    arr.forEach(person => {
-        console.log(`${person.name} from District ${person.district}`)
-    });
+function declareTributes (arr) {
+    function writeTributeAnnouncement (singleTribute){
+        let announcement = `${singleTribute.name} from District ${singleTribute.district}`
+        return announcement;
+    }
+    
+    let tributeAnnouncements = listOfTributes.map(writeTributeAnnouncement)
+    return tributeAnnouncements;
 }
 
-tributeSelection(listOfTributes)
+declareTributes(listOfTributes)
